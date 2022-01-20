@@ -7,7 +7,7 @@ COPY --chown=builder:builder arm-linux-gnueabihf_coretex-a8_kernel-3.2.101_glibc
 RUN mkdir ctng-armhf \
     && cd ctng-armhf \
     && cp /home/builder/ctng-config ./.config \
-    && sed -i 's,CT_LOG_PROGRESS_BAR=y,CT_LOG_PROGRESS_BAR=n,' ./.config
+    && sed -i 's,CT_LOG_PROGRESS_BAR=y,CT_LOG_PROGRESS_BAR=n,' ./.config \
     && ct-ng build \
     && cd .. \
     && rm -rf ctng-armhf
