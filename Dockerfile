@@ -16,5 +16,5 @@ FROM ubuntu:20.04 as builder-stage-2
 RUN adduser --disabled-password --gecos '' builder
 USER builder
 WORKDIR /home/builder
-COPY --from=builder-stage-1 /home/builder/x-tools /home/builder/x-tools
+COPY --from=builder-stage-1 --chown=builder:builder /home/builder/x-tools /home/builder/x-tools
 ENV PATH=${PATH}:/home/builder/x-tools/arm-linux-gnueabihf/bin
