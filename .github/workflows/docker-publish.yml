@@ -1,8 +1,7 @@
 name: Docker
 
 on:
-  workflow_dispatch
-
+  workflow_dispatch:
   repository_dispatch:
     types: [dep-change]
 
