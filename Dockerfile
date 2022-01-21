@@ -2,7 +2,8 @@ FROM ghcr.io/promisc/ct-ng:6737cfaa as builder-stage-1
 
 WORKDIR /home/builder
 
-COPY --chown=builder:builder arm-linux-gnueabihf_coretex-a8_kernel-3.2.101_glibc-2.19_gcc-9.4.0 /home/builder/ctng-config
+# COPY --chown=builder:builder arm-linux-gnueabihf_coretex-a8_kernel-3.2.101_glibc-2.19_gcc-9.4.0 /home/builder/ctng-config
+COPY --chown=builder:builder arm-linux-gnueabihf_coretex-a8_kernel-3.2.101_glibc-2.17_gcc-9.4.0 /home/builder/ctng-config
 
 RUN mkdir ctng-armhf \
     && cd ctng-armhf \
